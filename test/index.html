@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>restangular-socket</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body ng-controller="appController as app">
+    <a href="index.html" target="_blank">Open in a new window to see the real-time synchronisation</a>
+    <form ng-submit="app.submit()">
+      <input type="text" ng-model="app.input">
+      <button type="submit">Send</button>
+    </form>
+    <ul>
+      <li ng-repeat="message in app.messages">
+        {{ message }}
+      </li>
+    </ul>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+    <script src="node_modules/restangular/src/restangular.js"></script>
+    <script src="node_modules/socket.io-client/socket.io.js"></script>
+    <script src="node_modules/angular-socket-io/socket.js"></script>
+    <script src="src/restangular-socket.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
